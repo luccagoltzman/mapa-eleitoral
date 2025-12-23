@@ -43,6 +43,136 @@
     animation: fadeInDown 0.6s $ease-out;
   }
 
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    flex: 1;
+  }
+
+  &__welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: $spacing-sm;
+
+    @media (max-width: 768px) {
+      align-items: flex-start;
+      width: 100%;
+    }
+  }
+
+  &__welcome-content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: $spacing-md $spacing-lg;
+    border-radius: $border-radius-xl;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-lg);
+    transition: all $transition-base;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+  }
+
+  &__welcome-text {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    text-align: right;
+
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__welcome-greeting {
+    font-size: $font-size-lg;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+
+    strong {
+      font-weight: $font-weight-bold;
+      color: white;
+    }
+  }
+
+  &__welcome-message {
+    font-size: $font-size-sm;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    font-weight: $font-weight-normal;
+  }
+
+  &__welcome-foto {
+    flex-shrink: 0;
+  }
+
+  &__foto-perfil {
+    width: 60px;
+    height: 60px;
+    border-radius: $border-radius-full;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-md);
+    transition: all $transition-base;
+
+    .header__welcome-content:hover & {
+      transform: scale(1.1);
+      border-color: white;
+    }
+  }
+
+  &__foto-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: $border-radius-full;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-md);
+  }
+
+  &__candidato-numero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs $spacing-md;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius-full;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-sm);
+  }
+
   &__title {
     font-size: $font-size-4xl;
     font-weight: $font-weight-bold;

@@ -5,6 +5,7 @@ import CadastroPasseatas from './CadastroPasseatas/CadastroPasseatas'
 import CadastroCampanhas from './CadastroCampanhas/CadastroCampanhas'
 import CadastroGastos from './CadastroGastos/CadastroGastos'
 import Pesquisas from './Pesquisas/Pesquisas'
+import PerfilCandidato from './PerfilCandidato/PerfilCandidato'
 import './Gestao.scss'
 
 function Gestao() {
@@ -12,6 +13,7 @@ function Gestao() {
 
   const tabs = [
     { id: 'dashboard', label: '📊 Dashboard', icon: '📊' },
+    { id: 'perfil', label: '👤 Perfil', icon: '👤' },
     { id: 'votos', label: '🗳️ Votos', icon: '🗳️' },
     { id: 'passeatas', label: '🚶 Passeatas', icon: '🚶' },
     { id: 'campanhas', label: '📢 Campanhas', icon: '📢' },
@@ -35,6 +37,7 @@ function Gestao() {
 
       <div className="gestao__content">
         {activeTab === 'dashboard' && <Dashboard />}
+        {activeTab === 'perfil' && <PerfilCandidato />}
         {activeTab === 'votos' && <CadastroVotos />}
         {activeTab === 'passeatas' && <CadastroPasseatas />}
         {activeTab === 'campanhas' && <CadastroCampanhas />}

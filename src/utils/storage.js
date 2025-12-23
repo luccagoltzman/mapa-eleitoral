@@ -6,6 +6,28 @@ export const StorageKeys = {
   CAMPANHAS: 'mapa_eleitoral_campanhas',
   GASTOS: 'mapa_eleitoral_gastos',
   PESQUISAS: 'mapa_eleitoral_pesquisas',
+  PERFIL_CANDIDATO: 'mapa_eleitoral_perfil_candidato',
+}
+
+// Funções específicas para perfil do candidato (objeto único, não array)
+export const getPerfilCandidato = () => {
+  try {
+    const data = localStorage.getItem(StorageKeys.PERFIL_CANDIDATO)
+    return data ? JSON.parse(data) : null
+  } catch (error) {
+    console.error('Erro ao ler perfil do candidato:', error)
+    return null
+  }
+}
+
+export const setPerfilCandidato = (perfil) => {
+  try {
+    localStorage.setItem(StorageKeys.PERFIL_CANDIDATO, JSON.stringify(perfil))
+    return true
+  } catch (error) {
+    console.error('Erro ao salvar perfil do candidato:', error)
+    return false
+  }
 }
 
 export const getStorageData = (key) => {
