@@ -7,6 +7,8 @@ Projeto para campanhas eleitorais, onde o político possa gerir as regiões onde
 - **React 18** - Biblioteca JavaScript para construção de interfaces
 - **Vite** - Build tool moderna e rápida
 - **SCSS** - Pré-processador CSS para estilização avançada
+- **React Leaflet** - Biblioteca para mapas interativos
+- **Leaflet** - Biblioteca de mapas open-source
 
 ## 📦 Instalação
 
@@ -65,11 +67,18 @@ mapa-eleitoral/
 
 ## ✨ Funcionalidades
 
-- ✅ Mapa interativo com regiões clicáveis
-- ✅ Visualização de estatísticas por região
-- ✅ Painel de estatísticas gerais
-- ✅ Interface responsiva
-- ✅ Design moderno e intuitivo
+- ✅ **Mapa Real e Interativo** - Mapa geográfico real usando OpenStreetMap
+- ✅ **Zonas Eleitorais** - Visualização de zonas eleitorais com marcadores e círculos
+- ✅ **Informações Detalhadas** - Popups com dados completos de cada zona (votos, eleitores, percentual, seções)
+- ✅ **Código de Cores** - Sistema de cores baseado no percentual de votos:
+  - 🟢 Verde (≥70%) - Excelente
+  - 🔵 Azul (60-69%) - Bom
+  - 🟠 Laranja (50-59%) - Regular
+  - 🔴 Vermelho (<50%) - Atenção
+- ✅ **Painel de Estatísticas** - Detalhes completos da zona selecionada
+- ✅ **Zoom e Navegação** - Controles de zoom e navegação no mapa
+- ✅ **Responsivo** - Interface adaptável para diferentes tamanhos de tela
+- ✅ **Legenda Interativa** - Legenda explicativa do sistema de cores
 
 ## 🎨 Personalização
 

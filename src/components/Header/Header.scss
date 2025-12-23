@@ -21,6 +21,36 @@
     font-size: $font-size-lg;
     opacity: 0.9;
     color: white;
+    margin-bottom: $spacing-md;
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+
+  &__nav-item {
+    padding: $spacing-xs $spacing-md;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all $transition-base;
+    font-size: $font-size-base;
+    font-weight: 500;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+    }
   }
 }
 

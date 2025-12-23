@@ -36,3 +36,47 @@ input, select, textarea {
   outline: none;
 }
 
+// Estilos globais para botões (usados em múltiplos componentes)
+.btn {
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $transition-base;
+  border: none;
+
+  &-primary {
+    background: var(--color-primary);
+    color: white;
+
+    &:hover {
+      background: var(--color-primary-dark);
+    }
+  }
+
+  &-secondary {
+    background: var(--color-border);
+    color: var(--color-text);
+
+    &:hover {
+      background: var(--color-text-light);
+      color: white;
+    }
+  }
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  font-size: $font-size-lg;
+  cursor: pointer;
+  padding: $spacing-xs;
+  border-radius: $border-radius-sm;
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+

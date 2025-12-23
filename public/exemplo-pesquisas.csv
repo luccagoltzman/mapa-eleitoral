@@ -1,0 +1,6 @@
+orgao,data,tipo,zona,votos,percentual,eleitores,observacoes
+Datafolha,2024-01-15,eleitoral,Zona 001,15000,45.5,33000,Pesquisa realizada na região central
+Ibope,2024-01-20,eleitoral,Zona 002,12000,52.3,23000,Pesquisa de intenção de voto
+Datafolha,2024-02-01,eleitoral,Zona 003,18000,71.2,25300,Segunda pesquisa na zona sul
+Ipec,2024-02-10,eleitoral,Zona 004,11000,58.9,18700,Pesquisa com margem de erro de 2%
+

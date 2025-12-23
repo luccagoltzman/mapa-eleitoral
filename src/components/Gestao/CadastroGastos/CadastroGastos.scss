@@ -1,0 +1,151 @@
+@import '../../../styles/variables';
+
+.cadastro-gastos {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    color: var(--color-primary);
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    background: var(--color-background);
+    border-radius: $border-radius-md;
+    font-size: $font-size-lg;
+
+    span {
+      color: var(--color-text-light);
+    }
+
+    strong {
+      color: var(--color-primary);
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__form {
+    background: var(--color-background);
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+
+    label {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    input,
+    select,
+    textarea {
+      padding: $spacing-sm;
+      border: 2px solid var(--color-border);
+      border-radius: $border-radius-sm;
+      font-size: $font-size-base;
+      font-family: inherit;
+      transition: border-color $transition-base;
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  &__form-actions {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+
+  &__list {
+    h3 {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-md;
+      color: var(--color-text);
+    }
+  }
+
+  &__table {
+    background: var(--color-background);
+    border-radius: $border-radius-md;
+    overflow: hidden;
+  }
+
+  &__table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 120px;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    font-size: $font-size-sm;
+  }
+
+  &__table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 120px;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    border-bottom: 1px solid var(--color-border);
+    align-items: center;
+    font-size: $font-size-sm;
+
+    &:hover {
+      background: var(--color-background);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__valor {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  &__empty {
+    text-align: center;
+    color: var(--color-text-light);
+    font-style: italic;
+    padding: $spacing-xl;
+    background: var(--color-background);
+    border-radius: $border-radius-md;
+  }
+}
+
