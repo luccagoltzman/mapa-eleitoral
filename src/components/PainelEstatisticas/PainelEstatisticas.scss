@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .painel-estatisticas {
   background: var(--color-surface);
