@@ -48,18 +48,33 @@ npm run preview
 ```
 mapa-eleitoral/
 ├── src/
+│   ├── assets/             # Imagens e recursos estáticos
+│   │   └── README.md       # Documentação sobre uso de assets
 │   ├── components/          # Componentes React
 │   │   ├── Header/         # Cabeçalho da aplicação
 │   │   ├── MapaInterativo/ # Componente do mapa
-│   │   └── PainelEstatisticas/ # Painel de estatísticas
+│   │   ├── PainelEstatisticas/ # Painel de estatísticas
+│   │   └── Gestao/         # Sistema de gestão
+│   │       ├── Dashboard/  # Dashboard principal
+│   │       ├── CadastroVotos/ # Cadastro de votos
+│   │       ├── CadastroPasseatas/ # Cadastro de passeatas
+│   │       ├── CadastroCampanhas/ # Cadastro de campanhas
+│   │       ├── CadastroGastos/ # Cadastro de gastos
+│   │       └── Pesquisas/  # Importação e comparação de pesquisas
 │   ├── styles/             # Arquivos SCSS globais
 │   │   ├── _variables.scss # Variáveis SCSS
 │   │   ├── _reset.scss     # Reset CSS
 │   │   ├── _base.scss      # Estilos base
 │   │   └── main.scss       # Arquivo principal de estilos
+│   ├── utils/              # Utilitários
+│   │   └── storage.js      # Gerenciamento de localStorage
 │   ├── App.jsx             # Componente principal
 │   ├── App.scss            # Estilos do App
 │   └── main.jsx            # Ponto de entrada
+├── public/
+│   ├── assets/             # Assets públicos (acessíveis via URL)
+│   │   └── README.md       # Documentação sobre assets públicos
+│   └── exemplo-pesquisas.csv # Exemplo de CSV para importação
 ├── index.html              # HTML principal
 ├── vite.config.js          # Configuração do Vite
 └── package.json            # Dependências do projeto
@@ -83,3 +98,15 @@ mapa-eleitoral/
 ## 🎨 Personalização
 
 As variáveis de cores e estilos podem ser alteradas em `src/styles/_variables.scss`
+
+## 📸 Assets e Imagens
+
+O projeto possui duas pastas para armazenar imagens:
+
+- **`src/assets/`** - Para imagens importadas nos componentes (processadas pelo Vite)
+  - Use: `import logo from '../assets/logo.png'`
+  
+- **`public/assets/`** - Para imagens acessadas via URL direta
+  - Use: `<img src="/assets/logo.png" />`
+
+Consulte os README.md em cada pasta para mais detalhes.

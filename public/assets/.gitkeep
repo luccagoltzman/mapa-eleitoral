@@ -1,0 +1,10 @@
+# Pasta para armazenar imagens públicas acessíveis diretamente via URL
+# 
+# Imagens colocadas aqui podem ser acessadas via:
+# /assets/nome-da-imagem.jpg
+# 
+# Útil para:
+# - Imagens que precisam de URL fixa
+# - Favicons
+# - Imagens compartilhadas entre páginas
+
