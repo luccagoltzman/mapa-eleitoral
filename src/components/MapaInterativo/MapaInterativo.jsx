@@ -31,111 +31,175 @@ function MapController({ zonaSelecionada }) {
 function MapaInterativo({ onRegiaoSelecionada }) {
   const [zonaSelecionada, setZonaSelecionada] = useState(null)
 
-  // Dados de zonas eleitorais (exemplo com coordenadas do Brasil)
+  // Dados de zonas eleitorais de São Luís - MA e Maranhão
   const zonasEleitorais = [
     {
       id: 1,
-      nome: 'Zona Eleitoral 001 - Centro',
-      cidade: 'São Paulo',
-      estado: 'SP',
-      lat: -23.5505,
-      lng: -46.6333,
-      votos: 12500,
-      percentual: 65.8,
-      eleitores: 19000,
-      secao: '001-045',
-      cor: '#3b82f6'
-    },
-    {
-      id: 2,
-      nome: 'Zona Eleitoral 002 - Zona Norte',
-      cidade: 'São Paulo',
-      estado: 'SP',
-      lat: -23.4800,
-      lng: -46.6200,
-      votos: 8900,
-      percentual: 52.3,
-      eleitores: 17000,
-      secao: '046-090',
+      nome: 'Zona Eleitoral 001 - Centro Histórico',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Centro Histórico',
+      lat: -2.5297,
+      lng: -44.3028,
+      votos: 18500,
+      percentual: 72.5,
+      eleitores: 25500,
+      secao: '001-048',
       cor: '#10b981'
     },
     {
+      id: 2,
+      nome: 'Zona Eleitoral 002 - Renascença',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Renascença',
+      lat: -2.5400,
+      lng: -44.2800,
+      votos: 14200,
+      percentual: 68.3,
+      eleitores: 20800,
+      secao: '049-096',
+      cor: '#3b82f6'
+    },
+    {
       id: 3,
-      nome: 'Zona Eleitoral 003 - Zona Sul',
-      cidade: 'São Paulo',
-      estado: 'SP',
-      lat: -23.6500,
-      lng: -46.6400,
-      votos: 15200,
-      percentual: 71.2,
-      eleitores: 21300,
-      secao: '091-135',
+      nome: 'Zona Eleitoral 003 - Cohab',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Cohab',
+      lat: -2.5500,
+      lng: -44.2900,
+      votos: 11200,
+      percentual: 58.9,
+      eleitores: 19000,
+      secao: '097-144',
       cor: '#f59e0b'
     },
     {
       id: 4,
-      nome: 'Zona Eleitoral 004 - Zona Leste',
-      cidade: 'São Paulo',
-      estado: 'SP',
-      lat: -23.5500,
-      lng: -46.5000,
-      votos: 11200,
-      percentual: 58.9,
-      eleitores: 19000,
-      secao: '136-180',
-      cor: '#ef4444'
+      nome: 'Zona Eleitoral 004 - Cohama',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Cohama',
+      lat: -2.5200,
+      lng: -44.2700,
+      votos: 16800,
+      percentual: 65.2,
+      eleitores: 25700,
+      secao: '145-192',
+      cor: '#3b82f6'
     },
     {
       id: 5,
-      nome: 'Zona Eleitoral 005 - Zona Oeste',
-      cidade: 'São Paulo',
-      estado: 'SP',
-      lat: -23.5300,
-      lng: -46.7200,
+      nome: 'Zona Eleitoral 005 - Anjo da Guarda',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Anjo da Guarda',
+      lat: -2.5100,
+      lng: -44.3100,
       votos: 9800,
-      percentual: 48.5,
-      eleitores: 20200,
-      secao: '181-225',
-      cor: '#8b5cf6'
+      percentual: 52.4,
+      eleitores: 18700,
+      secao: '193-240',
+      cor: '#f59e0b'
     },
     {
       id: 6,
-      nome: 'Zona Eleitoral 006 - Região Metropolitana',
-      cidade: 'Guarulhos',
-      estado: 'SP',
-      lat: -23.4538,
-      lng: -46.5331,
-      votos: 6800,
-      percentual: 42.1,
-      eleitores: 16100,
-      secao: '226-270',
-      cor: '#06b6d4'
+      nome: 'Zona Eleitoral 006 - Itaqui-Bacanga',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Itaqui-Bacanga',
+      lat: -2.5600,
+      lng: -44.3200,
+      votos: 8900,
+      percentual: 48.6,
+      eleitores: 18300,
+      secao: '241-288',
+      cor: '#ef4444'
     },
     {
       id: 7,
-      nome: 'Zona Eleitoral 007 - Interior',
-      cidade: 'Campinas',
-      estado: 'SP',
-      lat: -22.9056,
-      lng: -47.0608,
+      nome: 'Zona Eleitoral 007 - Coroado',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Coroado',
+      lat: -2.5350,
+      lng: -44.2950,
       votos: 12400,
-      percentual: 68.3,
-      eleitores: 18100,
-      secao: '271-315',
-      cor: '#ec4899'
+      percentual: 61.8,
+      eleitores: 20000,
+      secao: '289-336',
+      cor: '#3b82f6'
     },
     {
       id: 8,
-      nome: 'Zona Eleitoral 008 - Litoral',
-      cidade: 'Santos',
-      estado: 'SP',
-      lat: -23.9608,
-      lng: -46.3331,
-      votos: 7600,
-      percentual: 55.7,
-      eleitores: 13600,
-      secao: '316-360',
-      cor: '#14b8a6'
+      nome: 'Zona Eleitoral 008 - Tirirical',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Tirirical',
+      lat: -2.5150,
+      lng: -44.2850,
+      votos: 10500,
+      percentual: 55.3,
+      eleitores: 19000,
+      secao: '337-384',
+      cor: '#f59e0b'
+    },
+    {
+      id: 9,
+      nome: 'Zona Eleitoral 009 - Cohajap',
+      cidade: 'São Luís',
+      estado: 'MA',
+      bairro: 'Cohajap',
+      lat: -2.5450,
+      lng: -44.2750,
+      votos: 13200,
+      percentual: 63.5,
+      eleitores: 20800,
+      secao: '385-432',
+      cor: '#3b82f6'
+    },
+    {
+      id: 10,
+      nome: 'Zona Eleitoral 010 - Raposa',
+      cidade: 'Raposa',
+      estado: 'MA',
+      bairro: 'Centro',
+      lat: -2.4167,
+      lng: -44.0833,
+      votos: 4200,
+      percentual: 58.2,
+      eleitores: 7200,
+      secao: '433-456',
+      cor: '#3b82f6'
+    },
+    {
+      id: 11,
+      nome: 'Zona Eleitoral 011 - Paço do Lumiar',
+      cidade: 'Paço do Lumiar',
+      estado: 'MA',
+      bairro: 'Centro',
+      lat: -2.5333,
+      lng: -44.1000,
+      votos: 6800,
+      percentual: 51.5,
+      eleitores: 13200,
+      secao: '457-504',
+      cor: '#f59e0b'
+    },
+    {
+      id: 12,
+      nome: 'Zona Eleitoral 012 - São José de Ribamar',
+      cidade: 'São José de Ribamar',
+      estado: 'MA',
+      bairro: 'Centro',
+      lat: -2.5500,
+      lng: -44.0500,
+      votos: 9200,
+      percentual: 59.7,
+      eleitores: 15400,
+      secao: '505-552',
+      cor: '#3b82f6'
     }
   ]
 
@@ -144,9 +208,9 @@ function MapaInterativo({ onRegiaoSelecionada }) {
     onRegiaoSelecionada(zona)
   }
 
-  // Calcular centro do mapa baseado nas zonas
-  const centerLat = zonasEleitorais.reduce((sum, z) => sum + z.lat, 0) / zonasEleitorais.length
-  const centerLng = zonasEleitorais.reduce((sum, z) => sum + z.lng, 0) / zonasEleitorais.length
+  // Centro do mapa: São Luís - MA
+  const centerLat = -2.5297
+  const centerLng = -44.3028
 
   // Função para determinar cor baseada no percentual
   const getColorByPercentual = (percentual) => {
@@ -159,14 +223,14 @@ function MapaInterativo({ onRegiaoSelecionada }) {
   return (
     <div className="mapa-interativo">
       <div className="mapa-interativo__header">
-        <h2>Mapa Eleitoral Interativo</h2>
-        <p>Clique nos marcadores para ver detalhes de cada zona eleitoral</p>
+        <h2>Mapa Eleitoral - São Luís/MA</h2>
+        <p>Clique nos marcadores para ver detalhes de cada zona eleitoral de São Luís e região metropolitana</p>
       </div>
       
       <div className="mapa-interativo__container">
         <MapContainer
           center={[centerLat, centerLng]}
-          zoom={10}
+          zoom={11}
           style={{ height: '100%', width: '100%' }}
           scrollWheelZoom={true}
         >
@@ -206,6 +270,7 @@ function MapaInterativo({ onRegiaoSelecionada }) {
                     <div className="mapa-interativo__popup">
                       <h3>{zona.nome}</h3>
                       <p><strong>Cidade:</strong> {zona.cidade} - {zona.estado}</p>
+                      {zona.bairro && <p><strong>Bairro:</strong> {zona.bairro}</p>}
                       <p><strong>Seções:</strong> {zona.secao}</p>
                       <p><strong>Votos:</strong> {zona.votos.toLocaleString('pt-BR')}</p>
                       <p><strong>Eleitores:</strong> {zona.eleitores.toLocaleString('pt-BR')}</p>

@@ -7,7 +7,7 @@ function Header({ currentView, onViewChange }) {
       <div className="header__overlay"></div>
       <div className="header__container">
         <h1 className="header__title">Mapa Eleitoral</h1>
-        <p className="header__subtitle">Gestão de Campanhas Eleitorais</p>
+        <p className="header__subtitle">Gestão de Campanhas Eleitorais - São Luís/MA</p>
         
         <nav className="header__nav">
           <button

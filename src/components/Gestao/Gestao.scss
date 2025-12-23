@@ -2,49 +2,88 @@
 
 .gestao {
   background: var(--color-surface);
-  border-radius: $border-radius-lg;
-  padding: $spacing-lg;
-  box-shadow: 0 2px 8px var(--color-shadow);
+  border-radius: $border-radius-xl;
+  padding: $spacing-xl;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-light);
   max-width: 1400px;
   margin: 0 auto;
+  animation: fadeInUp 0.6s $ease-out;
 
   &__tabs {
     display: flex;
-    gap: $spacing-sm;
-    margin-bottom: $spacing-lg;
-    border-bottom: 2px solid var(--color-border);
-    padding-bottom: $spacing-md;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-xl;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0;
     flex-wrap: wrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__tab {
-    padding: $spacing-sm $spacing-md;
+    padding: $spacing-md $spacing-lg;
     background: transparent;
     border: none;
-    border-bottom: 3px solid transparent;
-    color: var(--color-text-light);
+    border-bottom: 2px solid transparent;
+    color: var(--color-text-secondary);
     cursor: pointer;
     font-size: $font-size-base;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     transition: all $transition-base;
     position: relative;
-    bottom: -2px;
+    white-space: nowrap;
+    margin-bottom: -1px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-primary);
+      transform: scaleX(0);
+      transition: transform $transition-base;
+    }
 
     &:hover {
       color: var(--color-primary);
       background: var(--color-background);
-      border-radius: $border-radius-sm $border-radius-sm 0 0;
+      border-radius: $border-radius-md $border-radius-md 0 0;
+
+      &::before {
+        transform: scaleX(0.5);
+      }
     }
 
     &.active {
       color: var(--color-primary);
-      border-bottom-color: var(--color-primary);
-      font-weight: 600;
+      font-weight: $font-weight-semibold;
+
+      &::before {
+        transform: scaleX(1);
+      }
     }
   }
 
   &__content {
     min-height: 500px;
+    animation: fadeIn 0.4s $ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

@@ -1,12 +1,21 @@
+@use './styles/variables' as *;
+
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-background);
+  background: var(--color-background);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
 
   &__main {
     flex: 1;
-    padding: 2rem;
+    padding: $spacing-xl $spacing-lg;
+
+    @media (max-width: 768px) {
+      padding: $spacing-lg $spacing-md;
+    }
   }
 
   &__container {
@@ -14,11 +23,24 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    gap: $spacing-xl;
+    animation: fadeInUp 0.6s $ease-out;
 
     @media (max-width: 1024px) {
       grid-template-columns: 1fr;
+      gap: $spacing-lg;
     }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
